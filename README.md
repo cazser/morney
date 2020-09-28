@@ -27,3 +27,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+一确定url
+#/money记账
+#/labels标签
+#/statistics统计
+默认#/money
+404页面
