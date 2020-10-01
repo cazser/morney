@@ -7,8 +7,8 @@
 </template>
 
 <style lang="scss">
-@import "~@/assets/style/helper.scss";
-@import "~@/assets/style/reset.scss";
+//@import "~@/assets/style/helper.scss";
+//@import "~@/assets/style/reset.scss";
 *{padding: 0; margin: 0; box-sizing: border-box;}
 *::after, *::before{box-sizing: boder-box;}
 #app {
@@ -22,7 +22,7 @@ body{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-size: 16px;
   color: #333;
 }
 a{

@@ -1,5 +1,5 @@
 import Money from '@/views/Money.vue';
-import { shallowMount } from '@vue/test-utils';
+
 <template>
     <div class="nav-wrapper">
       <div class="content">
