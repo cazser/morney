@@ -12,3 +12,11 @@ ul, ol{
 button, input{
   font:inherit;
 }
+
+%clearFix{
+  &::after{
+    content:'';
+    display: block;
+    clear: both;
+    }
+}
