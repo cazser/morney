@@ -1,8 +1,9 @@
 import Money from '@/views/Money.vue';
 
 <template>
-    <div class="nav-wrapper">
-      <div class="content">
+    <div class="layout-wrapper">
+      <div class="content"
+            :class="classPrefix && `${classPrefix}-content`">
             <slot/>
       </div>
     <Nav/>
@@ -11,12 +12,13 @@ import Money from '@/views/Money.vue';
 
 <script>
     export default {
+        props:['classPrefix'],
         name:"Layout"
     }
 </script>
 
 <style lang="scss" scoped>
-     .nav-wrapper{
+     .layout-wrapper{
         
         display: flex;
         flex-direction: column;
