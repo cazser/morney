@@ -59,7 +59,6 @@
 
 <style lang="scss">
     .layout-content{
-        border: 1px solid orange;
         display: flex;
         flex-direction: column-reverse;
     }
