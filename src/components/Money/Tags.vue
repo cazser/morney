@@ -6,6 +6,8 @@
             <ul class="current">
                 <li v-for="tag in dataSource"
                 :key="tag"
+                :class="{selected: selectedTags.indexOf(tag)>=0}"
+                @click="toggle(tag)"
                 >{{tag}}</li>
             </ul>
            
@@ -24,6 +26,14 @@
         beforeCreate(){
             console.log(this.dataSource);
             
+        }
+        toggle(tag: string){
+            const index = this.selectedTags.indexOf(tag);
+            if(index >=0){
+                this.selectedTags.splice(index, 1);
+            }else{
+            this.selectedTags.push(tag);
+            }
         }
     }
 </script>
@@ -49,6 +59,10 @@
                  padding: 0 16px;
                  margin-right: 12px;
                  line-height: $h;
+                 &.selected{
+                     border: 1px solid blue;
+                     color: white;
+                 }
              }
          }
          > .new{

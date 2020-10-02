@@ -19,7 +19,7 @@ export default {
         components:{NumberPad, Types, Notes, Tags},
         data(){
             return {
-                tags:["衣","食", "住", "行"]
+                tags:["衣","食", "住", "行", "通信"]
             }
         }
     }
