@@ -4,21 +4,29 @@
                 <button>新增标签</button>
             </div>
             <ul class="current">
-                <li>衣</li>
-                <li>食</li>
-                <li>住</li>
-                <li>行</li>
+                <li v-for="tag in dataSource"
+                :key="tag"
+                >{{tag}}</li>
             </ul>
            
         </div>
 </template>
 
+
+
 <script lang="ts">
-    export default {
-        name:'Tags'
+    import Vue from 'vue'
+    import {Component, Prop} from 'vue-property-decorator';
+    @Component
+    export default class Tags extends Vue{
+        @Prop(Array) dataSource: string[] | undefined;
+        selectedTags: string[] = [];
+        beforeCreate(){
+            console.log(this.dataSource);
+            
+        }
     }
 </script>
-
 <style lang="scss" scoped>
         @import "~@/assets/style/helper.scss";
         @import "~@/assets/style/reset.scss";
