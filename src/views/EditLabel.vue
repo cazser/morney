@@ -7,7 +7,7 @@
                 编辑标签
             </span>
         </div>
-        <Notes field-name="标签名" 
+        <FormItem field-name="标签名" 
             place-holder="请输入标签名" />
     </Layout>
 </template>
@@ -17,8 +17,8 @@ import {Component, Prop} from 'vue-property-decorator';
 import Layout from '@/components/Layout.vue';
 import { tagListModel } from '@/models/tagListModel';
 import Icon from '@/components/Icon.vue';
-import Notes from '../components/Money/Notes.vue';
-@Component({components:{Notes}})
+import FormItem from '../components/Money/FormItem.vue';
+@Component({components:{FormItem}})
 export default class EditLabel extends Vue{
     created(){
         const id = this.$route.params.id;

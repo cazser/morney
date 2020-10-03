@@ -5,7 +5,7 @@
                     @submit="saveRecord"/>
         <Types      @update:value="onUpdateType"
                     :value.sync="record.type"/>
-        <Notes      fieldName="备注"
+        <FormItem   fieldName="备注"
                     placeHolder="在这里输入备注"
                     @update:value="onUpdateNotes"/>
         <Tags :dataSource.sync="tags" 
@@ -17,7 +17,7 @@
     import Vue from 'vue'
     import NumberPad from "@/components/Money/NumberPad.vue"
     import Types from "@/components/Money/Types.vue"
-    import Notes from "@/components/Money/Notes.vue"
+    import FormItem from "@/components/Money/FormItem.vue"
     import Tags from "@/components/Money/Tags.vue"
     import {recordListModel} from "@/models/recordList.ts"
     import {tagListModel} from "@/models/tagListModel.ts"
@@ -33,7 +33,7 @@
 
     const tagList = tagListModel.fetch();
     @Component({
-        components:{NumberPad, Types, Notes, Tags}
+        components:{NumberPad, Types, FormItem, Tags}
     })
     export default class Money extends Vue{
         tags = tagList;
