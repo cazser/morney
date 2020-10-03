@@ -9,15 +9,13 @@ type TagListModel ={
     fetch: () => Tag[];
     create: (name: string) => boolean;
     save: () => void;
+    delete: (id: string) => void;
 }
 const tagListModel: TagListModel={
     data:[],
     fetch(){
-        this.data = [
-            {name:"衣",id:"衣"},
-            {name:"食",id:"食"},
-            {name: "住", id:"住"},
-            {name:"行", id:"行"}] ||JSON.parse( window.localStorage.getItem(localStorageKeyName) || '[]');
+        this.data = 
+            JSON.parse( window.localStorage.getItem(localStorageKeyName) || '[]');
         return this.data;
     },
     create(name: string){
@@ -34,6 +32,11 @@ const tagListModel: TagListModel={
     },
     save(){
         window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.data));
+    },
+    delete(id: string){
+        this.data = this.data.filter(item => item.id !== id);
+        this.save();
+        console.log(this.fetch());
     }
 }
 

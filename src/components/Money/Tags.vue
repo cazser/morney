@@ -1,6 +1,6 @@
 <template>
     <div class="tags">
-             <div class="new">
+            <div class="new">
                 <button @click="create">新增标签</button>
             </div>
             <ul class="current">
@@ -10,7 +10,7 @@
                 @click="toggle(tag)"
                 >{{tag.name}}</li>
             </ul>
-           
+        
         </div>
 </template>
 
@@ -57,34 +57,34 @@
         display: flex;
         flex-direction: column-reverse;
         font-size: 14px;
-         > .current{
-             display: flex;
-             flex-wrap: wrap;
-             margin-top: 4px;
-             overflow:auto;
-             > li{
-                 background: #d9d9d9;
-                 $h: 24px;
-                 height: $h;
-                 border-radius: $h/2;
-                 padding: 0 16px;
-                 margin-right: 12px;
-                 line-height: $h;
-                 &.selected{
-                     border: 1px solid blue;
-                     color: white;
-                 }
-             }
-         }
-         > .new{
-             padding-top: 16px;
-             button{
-                 background: transparent;
-                 border: none;
-                 border-bottom:1px solid;
-                 color: #999;
-                 padding: 0 3px;
-             }
-         }
+        > .current{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4px;
+            overflow:auto;
+            > li{
+                background: #d9d9d9;
+                $h: 24px;
+                height: $h;
+                border-radius: $h/2;
+                padding: 0 16px;
+                margin-right: 12px;
+                line-height: $h;
+                &.selected{
+                    border: 1px solid blue;
+                    color: white;
+                }
+            }
+        }
+        > .new{
+            padding-top: 16px;
+            button{
+                background: transparent;
+                border: none;
+                border-bottom:1px solid;
+                color: #999;
+                padding: 0 3px;
+            }
+        }
     }
 </style>

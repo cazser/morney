@@ -39,8 +39,11 @@ import Icon from '@/components/Icon.vue';
             }
         }
         deleteTag(id: string){
-            console.log(id);
-            
+            tagListModel.delete(id);
+            this.tags = tagListModel.data;
+            //console.log(this.tags);
+            //console.log("done");
+        
         }
     }
 </script>
