@@ -1,12 +1,13 @@
 import Icon from '@/components/Icon.vue';
 <template>
     <Layout>
-        <ul class="tags">
-            <li v-for="tag in tags" :key="tag.id">
+        <div class="tags">
+            <router-link v-for="tag in tags" :key="tag.id"
+                        class="tag"  :to="`/label/edit/${tag.id}`">
                 <Icon name="right"/> 
                 <span>{{tag.name}}</span>
-            </li>
-        </ul>
+            </router-link>
+        </div>
         <div class="createTag-wrapper">
             <button class="createTag"
                     @click="createTag">新建标签</button>
@@ -17,8 +18,8 @@ import Icon from '@/components/Icon.vue';
 <script lang="ts">
     import Vue from 'vue';
     import {tagListModel} from '@/models/tagListModel.ts';
-    import {Component, Prop} from 'vue-property-decorator';
-         tagListModel.fetch();
+    import {Component} from 'vue-property-decorator';
+        tagListModel.fetch();
     @Component
     export default class Labels extends Vue{
         tags = tagListModel.data;
@@ -43,7 +44,7 @@ import Icon from '@/components/Icon.vue';
         background: white;
         font-size: 16px;
         padding-left: 16px;
-        >li{
+        > .tag{
             display:flex;
             flex-direction: row-reverse;
             justify-content: space-between;
