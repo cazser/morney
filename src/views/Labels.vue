@@ -2,9 +2,9 @@ import Icon from '@/components/Icon.vue';
 <template>
     <Layout>
         <ul class="tags">
-            <li v-for="tag in tags" :key="tag">
+            <li v-for="tag in tags" :key="tag.id">
                 <Icon name="right"/> 
-                <span>{{tag}}</span>
+                <span>{{tag.name}}</span>
             </li>
         </ul>
         <div class="createTag-wrapper">
