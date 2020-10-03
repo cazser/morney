@@ -2,11 +2,14 @@ import Icon from '@/components/Icon.vue';
 <template>
     <Layout>
         <div class="tags">
-            <router-link v-for="tag in tags" :key="tag.id"
+            <div v-for="tag in tags" :key="tag.id"
                         class="tag"  :to="`/label/edit/${tag.id}`">
-                <Icon name="right"/> 
+                <div class="deleteWrapper"
+                        @click="deleteTag(tag.id)">
+                    <Icon name="delete"/> 
+                </div>
                 <span>{{tag.name}}</span>
-            </router-link>
+            </div>
         </div>
         <div class="createTag-wrapper">
             <button class="createTag"
@@ -34,6 +37,10 @@ import Icon from '@/components/Icon.vue';
                     }
                 }
             }
+        }
+        deleteTag(id: string){
+            console.log(id);
+            
         }
     }
 </script>
@@ -64,5 +71,10 @@ import Icon from '@/components/Icon.vue';
             text-align: center;
             margin-top: 44px;
         }
+    }
+
+    .deleteWrapper{
+        padding-right: 16px;
+        color: red;
     }
 </style>
