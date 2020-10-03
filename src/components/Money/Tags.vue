@@ -19,9 +19,10 @@
 <script lang="ts">
     import Vue from 'vue'
     import {Component, Prop} from 'vue-property-decorator';
+    import {tagListModel} from '@/models/tagListModel.ts';
     @Component
     export default class Tags extends Vue{
-        @Prop(Array) dataSource: string[] | undefined;
+        dataSource= tagListModel.data; 
         selectedTags: string[] = [];
         toggle(tag: string){
             const index = this.selectedTags.indexOf(tag);
@@ -35,22 +36,22 @@
         create(){
             const name = 
             window.prompt("请输入标签名")
-            if(name===''){
-                window.alert('标签名不能为空')
-            }else{
-                
-                if(this.dataSource){
-                    //this.dataSource.push(name as string);
-                    this.$emit('update:dataSource', [...this.dataSource, name])
+            if(name){
+                try{
+                tagListModel.create(name);
+                }catch(error){
+                    if(error.message === 'duplicated'){
+                        window.alert('标签重复');
+                    }
                 }
             }
+            this.dataSource=tagListModel.data;
         }
     }
 </script>
 <style lang="scss" scoped>
         @import "~@/assets/style/helper.scss";
         @import "~@/assets/style/reset.scss";
-        
         .tags{
         flex-grow: 1;
         display: flex;
