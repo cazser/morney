@@ -19,8 +19,8 @@ import Statistics from '@/views/Statistics.vue';
     }
 </script>
 
-<style lang="scss">
-    .x li{
+<style lang="scss" scoped>
+    .x ::v-deep li{
         border: 1px solid orange;
     }
 </style>
