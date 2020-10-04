@@ -1,7 +1,7 @@
 import Statistics from '@/views/Statistics.vue';
 <template>
     <Layout>
-        <Types/>
+        <Types class="x"/>
     </Layout>
     
 </template>
@@ -19,6 +19,8 @@ import Statistics from '@/views/Statistics.vue';
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+    .x li{
+        border: 1px solid orange;
+    }
 </style>
