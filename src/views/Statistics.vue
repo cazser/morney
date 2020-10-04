@@ -1,7 +1,7 @@
 import Statistics from '@/views/Statistics.vue';
 <template>
     <Layout>
-        <Types class="x" :value="yyy"
+        <Types  :value="yyy"
                 :classPrefix="xxx"/>
     </Layout>
     
@@ -22,7 +22,7 @@ import Statistics from '@/views/Statistics.vue';
 </script>
 
 <style lang="scss" scoped>
-    .x ::v-deep li{
+    ::v-deep li{
         background: white;
         &.selected{
             background: #c4c4c4;
