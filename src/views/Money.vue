@@ -39,7 +39,7 @@
     export default class Money extends Vue{
         tags = tagList;
         record: RecordItem={tags:[], notes:"", type:'-', amount:0, createdAt: undefined};
-        recordList = recordListModel.fetch();
+        recordList =recordListModel.fetch();
         //JSON.parse( window.localStorage.getItem('recordList') || '[]');
         onUpdateTags(value: string[]){
             this.record.tags = value;
@@ -59,14 +59,12 @@
         saveRecord(){
             const record2: RecordItem = recordListModel.clone(this.record);
             record2.createdAt = new Date();
-            this.recordList.push(record2);
-            console.log(this.recordList);
-            
+            this.recordList.push(record2);            
         }
         @Watch('recordList')
         onRecordListChange(){
             //window.localStorage.setItem('recordList', JSON.stringify(this.recordList));
-            recordListModel.save(this.recordList);
+            recordListModel.save();
         }
     }
 </script>
