@@ -24,6 +24,7 @@
     import {tagListModel} from "@/models/tagListModel.ts"
     import RecordItem from '@/custom';
     import {Component, Prop, Watch} from 'vue-property-decorator';
+    import clone from '../libs/clone';
     /*type RecordItem ={
         tags: string[];
         notes: string;
@@ -57,7 +58,7 @@
             this.record.type = value;
         }
         saveRecord(){
-            const record2: RecordItem = recordListModel.clone(this.record);
+            const record2: RecordItem = clone(this.record);
             record2.createdAt = new Date();
             this.recordList.push(record2);            
         }
