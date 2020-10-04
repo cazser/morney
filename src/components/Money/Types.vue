@@ -1,9 +1,9 @@
 <template>
     <div>
         <ul class="types">
-            <li :class="value === '-' && 'selected'"
+            <li :class="type === '-' && 'selected'"
             @click="selectType('-')">支出</li>
-            <li :class="value === '+' && 'selected'"
+            <li :class="type === '+' && 'selected'"
             @click="selectType('+')">收入</li>
         </ul>
     </div>
@@ -37,7 +37,10 @@
             if(type !== '-' && type !=='+'){
                 throw new Error("type is unknown")
             }
+            
+            
             this.type = type;
+            
         }
         @Watch('type')
         onTypeChanged(value: string){

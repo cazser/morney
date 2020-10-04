@@ -1,7 +1,7 @@
 import Statistics from '@/views/Statistics.vue';
 <template>
     <Layout>
-        <Types class="x"/>
+        <Types class="x" :value="yyy"/>
     </Layout>
     
 </template>
@@ -15,12 +15,19 @@ import Statistics from '@/views/Statistics.vue';
         components:{Types}
     })
     export default class Statistics extends Vue{
+        yyy='-';
         
     }
 </script>
 
 <style lang="scss" scoped>
     .x ::v-deep li{
-        border: 1px solid orange;
+        background: white;
+        &.selected{
+            background: #c4c4c4;
+            &::after{
+                display: none;
+            }
+        }
     }
 </style>
