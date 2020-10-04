@@ -1,8 +1,8 @@
 import Statistics from '@/views/Statistics.vue';
 <template>
     <Layout>
-        <Types  :value="yyy"
-                :classPrefix="xxx"/>
+        <Types  :value="yyy" :classPrefix="zzz"/>
+        <Types  :value="yyy" :classPrefix="zzz3"/>
     </Layout>
     
 </template>
