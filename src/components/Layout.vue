@@ -25,7 +25,7 @@ import Money from '@/views/Money.vue';
         height: 100vh;
     }
     .content{
-        border: 1px solid orange;
+    
         flex-grow: 1;
         overflow: auto;
     }
