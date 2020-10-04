@@ -3,7 +3,11 @@ import Statistics from '@/views/Statistics.vue';
     <Layout>
         <Tabs class-prefix="type" :data-source="typeList" :value.sync="type"/>
         <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
-        
+        <ol>
+            <li v-for="item in result" :key="item.id">
+                {{result}}
+            </li>
+        </ol>        
     </Layout>
     
 </template>
@@ -22,6 +26,16 @@ import Statistics from '@/views/Statistics.vue';
         interval="day";
         intervalList= intervalList;
         typeList = recordTypeList;
+        get recordList(){
+            return this.$store.state.recordList ;
+        }
+        get result(){
+            return this.recordList();
+        }
+
+        mounted(){
+            this.$store.commit('fetchRecords')
+        }
     }
 </script>
 
